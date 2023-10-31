@@ -1,4 +1,5 @@
 import 'package:esalmi_2/UI/chapterDetails/chapterDetailsScreen.dart';
+import 'package:esalmi_2/UI/hadethDetails/hadethDetailsScreen.dart';
 import 'package:esalmi_2/UI/home/homeScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -50,11 +51,13 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         HomeScreen.routeName :(_)=> HomeScreen(),
-        chapterDetailsScreen.route:(_)=>chapterDetailsScreen()
+        chapterDetailsScreen.route:(_)=>chapterDetailsScreen(),
+        hadethDetailsScreen.route:(_)=>hadethDetailsScreen()
       },
       initialRoute: HomeScreen.routeName,
       home: HomeScreen(),
     );
   }
+
 }
 
