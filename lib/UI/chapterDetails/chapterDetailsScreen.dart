@@ -11,7 +11,7 @@ class chapterDetailsScreen extends StatefulWidget {
 class _chapterDetailsScreenState extends State<chapterDetailsScreen> {
   @override
   Widget build(BuildContext context) {
-    chapterDetailsArg arg = ModalRoute.of(context)
+    var arg = ModalRoute.of(context)
     ?.settings.arguments as chapterDetailsArg;
     if(verse.isEmpty){
       loudfile(arg.index);
