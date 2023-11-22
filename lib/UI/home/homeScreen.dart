@@ -3,6 +3,7 @@ import 'package:esalmi_2/UI/home/quran/quranTap.dart';
 import 'package:esalmi_2/UI/home/radio/radioTap.dart';
 import 'package:esalmi_2/UI/home/tasbh/tasbhTap.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static String routeName='homeScreen';
@@ -25,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Islami',),
+          title:  Text(AppLocalizations.of(context)!.app_name,),
           backgroundColor:Colors.transparent,
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -38,16 +39,20 @@ class _HomeScreenState extends State<HomeScreen> {
           items: [
             BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
-                icon: ImageIcon(AssetImage('assets/image/quran.png')),label: 'Quran'),
+                icon: ImageIcon(AssetImage('assets/image/quran.png')),label:
+            AppLocalizations.of(context)!.quran),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
-                icon: ImageIcon(AssetImage('assets/image/quran_quran_svgrepo_com.png')),label: 'hadeth'),
+                icon: ImageIcon(AssetImage('assets/image/quran_quran_svgrepo_com.png')),label:
+            AppLocalizations.of(context)!.hadeth),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
-                icon: ImageIcon(AssetImage('assets/image/sebha.png')),label: 'sebha'),
+                icon: ImageIcon(AssetImage('assets/image/sebha.png')),label:
+            AppLocalizations.of(context)!.tasbeh),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
-                icon: ImageIcon(AssetImage('assets/image/radio.png')),label: 'radio'),
+                icon: ImageIcon(AssetImage('assets/image/radio.png')),label:
+            AppLocalizations.of(context)!.radio),
 
           ],
         ),
