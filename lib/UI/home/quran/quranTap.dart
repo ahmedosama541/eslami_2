@@ -24,13 +24,15 @@ class quranTap extends StatelessWidget {
           (
             flex: 1,
             child: Image.asset('assets/image/quran_header_image.png')),
+        Text('chapter Name',
+        style: Theme.of(context).textTheme.headlineSmall,),
         Expanded(
           flex: 3,
           child: ListView.separated(itemBuilder: (context,index){
             return chapterTtileWidget(name[index],index);
 
     }, separatorBuilder: (context,index)=>Container(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).dividerColor,
             width: double.infinity,
             height: 3 ,
             margin: EdgeInsets.symmetric(horizontal: 50),

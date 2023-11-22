@@ -1,4 +1,5 @@
 import 'package:esalmi_2/UI/home/hadeth/Hadeth.dart';
+import 'package:esalmi_2/UI/myThemData.dart';
 import 'package:flutter/material.dart';
 
 class hadethDetailsScreen extends StatelessWidget {
@@ -10,16 +11,18 @@ class hadethDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var args = ModalRoute.of(context)?.settings.arguments as Hadeth;
     return
-      Container(decoration: const BoxDecoration(
+      Container(decoration:  BoxDecoration(
         image:DecorationImage(
-            image: AssetImage('assets/image/img.png'),
+            image: AssetImage( MyThemData.isDarkEnable ?
+            'assets/image/main_background_dark.png':
+            'assets/image/img.png' ),
             fit: BoxFit.fill
         )
     ),
       child: Scaffold(
 
           appBar: AppBar(
-            title: Text(args.title),
+            title: Text(args.title,),
           ),
           body:
           Column(
@@ -31,9 +34,7 @@ class hadethDetailsScreen extends StatelessWidget {
                           SingleChildScrollView(
                             child: Text(args.Content,
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 20
-                            ),),
+                            style:Theme.of(context).textTheme.bodyMedium,),
                           )
                       
 
@@ -45,3 +46,4 @@ class hadethDetailsScreen extends StatelessWidget {
     );
   }
 }
+

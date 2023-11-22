@@ -1,4 +1,5 @@
 import 'package:esalmi_2/UI/chapterDetails/verseWiget.dart';
+import 'package:esalmi_2/UI/myThemData.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -16,9 +17,11 @@ class _chapterDetailsScreenState extends State<chapterDetailsScreen> {
     if(verse.isEmpty){
       loudfile(arg.index);
     }
-    return Container(decoration: const BoxDecoration(
+    return Container(decoration:  BoxDecoration(
         image:DecorationImage(
-            image: AssetImage('assets/image/img.png'),
+            image: AssetImage( MyThemData.isDarkEnable ?
+            'assets/image/main_background_dark.png':
+            'assets/image/img.png' ),
             fit: BoxFit.fill
         )
     ),
@@ -34,7 +37,7 @@ class _chapterDetailsScreenState extends State<chapterDetailsScreen> {
              return verseWidget(verse[index],index);
             },
                 separatorBuilder: (context,index)=>Container(
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).dividerColor,
           width: double.infinity,
           height: 3 ,
           margin: EdgeInsets.symmetric(horizontal: 50),
