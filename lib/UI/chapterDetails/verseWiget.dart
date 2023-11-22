@@ -14,9 +14,7 @@ class verseWidget extends StatelessWidget {
             child: Text('$content {$index}',
               textDirection:TextDirection.rtl,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontSize: 25
-              ),
+              style: Theme.of(context).textTheme.bodyMedium
             )
     );
   }

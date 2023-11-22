@@ -1,6 +1,7 @@
 import 'package:esalmi_2/UI/chapterDetails/chapterDetailsScreen.dart';
 import 'package:esalmi_2/UI/hadethDetails/hadethDetailsScreen.dart';
 import 'package:esalmi_2/UI/home/homeScreen.dart';
+import 'package:esalmi_2/UI/myThemData.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -18,39 +19,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        appBarTheme:const AppBarTheme(
-        backgroundColor: Colors.transparent,
-          centerTitle: true,
-          titleTextStyle: TextStyle(
-            fontSize: 28,
-            color: Colors.black,
-          )
-        ),
-        bottomNavigationBarTheme:  BottomNavigationBarThemeData(
-            selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.white,
-          selectedIconTheme: IconThemeData(
-            size: 32
-          )
-        ),
-        scaffoldBackgroundColor: Colors.transparent,
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFFB7935F),
-          primary:Color(0xFFB7935F) ,
-          secondary: Color(0xDFB7935F),
-          onPrimary: Colors.white,
-            onSecondary: Colors.black
-        ),
-        useMaterial3: true,
-        cardTheme: CardTheme(
-          color: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(18),
-          ),
-            elevation: 18
-        )
-      ),
+      theme: MyThemData.lightTheme,
+      darkTheme: MyThemData.darkTheme,
+      themeMode:ThemeMode.light ,
       routes: {
         HomeScreen.routeName :(_)=> HomeScreen(),
         chapterDetailsScreen.route:(_)=>chapterDetailsScreen(),

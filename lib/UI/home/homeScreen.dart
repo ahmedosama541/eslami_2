@@ -1,7 +1,9 @@
 import 'package:esalmi_2/UI/home/hadeth/hadethTap.dart';
 import 'package:esalmi_2/UI/home/quran/quranTap.dart';
 import 'package:esalmi_2/UI/home/radio/radioTap.dart';
+import 'package:esalmi_2/UI/home/settings/settingsTab.dart';
 import 'package:esalmi_2/UI/home/tasbh/tasbhTap.dart';
+import 'package:esalmi_2/UI/myThemData.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -20,7 +22,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       decoration: BoxDecoration(
         image:DecorationImage(
-          image: AssetImage('assets/image/img.png'),
+          image: AssetImage(
+            MyThemData.isDarkEnable ?
+            'assets/image/main_background_dark.png':
+            'assets/image/img.png'   ),
               fit: BoxFit.fill
         )
       ),
@@ -53,6 +58,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 backgroundColor: Theme.of(context).primaryColor,
                 icon: ImageIcon(AssetImage('assets/image/radio.png')),label:
             AppLocalizations.of(context)!.radio),
+            BottomNavigationBarItem(
+                backgroundColor: Theme.of(context).primaryColor,
+                icon: Icon(Icons.settings),label: 'settings'),
 
           ],
         ),
@@ -66,5 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
     hadethTap(),
     tasbhTap(),
     radioTap(),
+    SettingsTab()
   ];
 }
+
